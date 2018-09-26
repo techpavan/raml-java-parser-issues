@@ -1,0 +1,25 @@
+#%RAML 1.0
+title: ParserTest
+version: v1
+
+traits:
+  trait1:
+    queryParameters:
+      param1:
+        type: string
+      param2:
+        type: string
+        required: false
+
+  trait2:
+    is: trait1
+
+
+
+/resource1:
+  get:
+    is: trait1
+
+/resource2:
+  get:
+    is: trait2
